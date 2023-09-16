@@ -1,0 +1,24 @@
+Kubernetes - K8s
+- a container orchestration platform
+- manages the deployment, scaling, and monitoring of containerized applications
+- provides a way to define and manage the desired state of a cluster
+
+WHAT K8s CAN'T DO
+- does not deploy source code
+- does not build your applications
+- does not provide application-level services (e.g., databases, message queues)
+
+K8s CAN DO
+- automate the deployment and scaling of containerized applications
+- provide a way to define and manage the desired state of a cluster
+- provide a way to distribute and manage state across multiple nodes in a cluster
+- provide a way to orchestrate containerized applications across multiple nodes in a cluster
+
+K8s COMPONENTS
+- API Server: manages cluster resources and provides a RESTful API for managing the cluster
+- Control Plane: manages the state of the cluster, including scheduling, managing pods, and managing containers
+- Worker Nodes: the physical or virtual machines that run the containerized applications
+- etcd: a distributed key-value store that stores the state of the cluster
+- Kubernetes Master: the central control plane that configures and manages the cluster
+
+Cluster -> Nodes -> Pods -> Containers -> Services/Applications
