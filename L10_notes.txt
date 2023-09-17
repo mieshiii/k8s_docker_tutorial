@@ -22,3 +22,7 @@ K8s COMPONENTS
 - Kubernetes Master: the central control plane that configures and manages the cluster
 
 Cluster -> Nodes -> Pods -> Containers -> Services/Applications
+
+Check if Kubernetes is installed
+- kubectl cluster-info
+- kubectl get nodes
