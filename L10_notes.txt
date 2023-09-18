@@ -23,6 +23,29 @@ K8s COMPONENTS
 
 Cluster -> Nodes -> Pods -> Containers -> Services/Applications
 
+RUN LOCAL K8s
+ - docker desktop - single node
+ - minikube - multiple nodes
+ - microk8s - multiple nodes
+ - kind - multiple nodes
+
+**when running Linux machine, kubectl IS NOT INSTALLED along with docker-desktop
+
 Check if Kubernetes is installed
 - kubectl cluster-info
 - kubectl get nodes
+
+**you can use kubectx to quickly switch between contexts
+**install using sudo apt install kubectx
+
+Check what context you are in
+- kubectl config current-context
+- kubectl config get-contexts
+
+Imperative vs Declarative
+ - Imperative: commands in CLI/like code
+ - Declarative: YAML files
+
+Create an object using YAML
+ - kubectl create -f [YAML file]
+
