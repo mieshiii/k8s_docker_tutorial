@@ -1,0 +1,37 @@
+Nodes
+ - Master Node (master) also known as Control Plane
+ - multiple nodes form a cluster
+
+kube-apiserver
+ - REST interface
+ - save state to the datastore (etcd)
+ - all clients interact with it, never directly to the datastore
+
+etcd
+ - acts as the cluster datastore for storing state
+ - KEY-VALUE store, not a database
+ - only serves the cluster state, not for applications
+ - singe source of truth
+
+kube-control-manager
+ - controller of controllers
+ - runs other controllers such as:
+  - node controller
+  - replication controller
+  - endpoint controller
+  - service account and token controllers
+
+cloud-controller-manager
+ - interact with the cloud providers controllers
+
+kube-scheduler
+ - schedules pods on nodes
+ - watches newly created pods and schedules them on nodes
+
+addons
+ - addons are optional components that can be installed on a cluster
+ - such as: 
+  - DNS
+  - dashboard
+  - cluster-level logging
+  - container resource monitoring
