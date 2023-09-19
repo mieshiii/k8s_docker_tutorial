@@ -48,4 +48,5 @@ Imperative vs Declarative
 
 Create an object using YAML
  - kubectl create -f [YAML file]
-
+ **docs for new manifests at kubernetes.io/docs
+ - kubectl [flags for objects to created] --dry-run=client -o yaml > [file]
