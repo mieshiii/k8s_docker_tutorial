@@ -1,0 +1,29 @@
+pods
+ - smallest unit of work in k8s
+ - encapsulates an apllication's container
+ - represents a unit of deployment
+ - can run one or multiple containers
+ - containers can share:
+   - volumes
+   - environment variables
+   - secrets
+   - config maps
+   - ip addresses
+ - containers can communicate via:
+   - Localhost
+   - IPC
+ - pods are ephemeral
+ - deployment of pods are atomic, successful or failed
+ - if pods fails, it is replaced by a new pod (no updating happens) with an updated version
+ - scaling is done by adding MORE PODS, NOT CONTAINERS in pods
+ - pod states:
+   - pending: accepted but not yet created
+   - running: bound to a node
+   - succeeded: exited with status 0
+   - failed: all containers exit and at least one exited with non-zero status
+   - unknown: communication issues with the pod
+   - crashloopbackoff: started, crashed, and looped back to started and crashed
+
+
+
+
