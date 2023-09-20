@@ -24,6 +24,15 @@ pods
    - unknown: communication issues with the pod
    - crashloopbackoff: started, crashed, and looped back to started and crashed
 
+Init containers
+ - initialize a Pod before an application container runs, prep for the app container
+ - always run to completion
+ - each init container is run in order, must complete before the next one can start
+ - if it fails, the kubelet repeatedly restarts it until in succeeds
+    - unless it's restartPolicy is set to never
+ - probes are not supported
+
+
 
 
 
