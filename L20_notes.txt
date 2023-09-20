@@ -35,3 +35,32 @@ addons
   - dashboard
   - cluster-level logging
   - container resource monitoring
+
+Worker Nodes
+ 
+kubelet
+ - manage the pods lifecycle
+ - ensures that the containers are running and healthy with respect to Pod specs
+
+kube-proxy
+ - network proxy that manages network rules on nodes
+
+container runtime
+ eg: - Moby
+     - Containerd
+     - Cri-0
+     - Rkt
+     - Kata
+     - Virtlet
+
+pre V1.19 acrhi: docs.microsoft.com/en-us/azure/aks/cluster-configuration
+post V1.19 uses crictl
+
+Nodes pool
+ - node pools is a group of VMs, all with the same sizes
+ - clusters can have multiple node pools
+  - pools can host different sizes of VMs
+  - each pool can be autoscaled independently from other pools
+**docker desktop is limited to 1 node
+
+
