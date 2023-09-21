@@ -1,0 +1,15 @@
+Multiple Container Pods
+Typical Patterns:
+- Sidecar: app writes to log files and sidecar copies to persistent storage
+- Adapter: app writes complex monitoring output, adapter simplifies for 3rd party service
+- Ambassador: app needts to persist data to db, ambassador writes to db
+
+**further read on Designing Distributed Systems (Brendan Burns)
+
+Networking Concepts
+ - all containers within a pod can communicate with each other
+ - all pods can comminicate with each other
+ - all nodes can communicate with pods
+ - pods are given an ephemeral IP address
+ - services are given a persistent IP address
+ - interpod communication only happens via services
