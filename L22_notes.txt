@@ -1,0 +1,4 @@
+Selectors
+ - use labels to filter or select objects
+
+** refer to lab files to check how to use selectors
