@@ -1,0 +1,27 @@
+Workloads
+ - is an application that runs within K8s
+ - Pod - the atomic Workload, represents a set of running containers
+ - ReplicaSet
+    - primary method of pod replicas and their lifecycle to provide self-healing capabilities
+    - always ensures the desired number of pods are running
+    - while can be used, recommended is to use Deployments
+ - Deployment
+    - Deployments self-heal, scale, update, or rollback
+    - deployment manages a single pod template
+    - typically you create one deployment per microservice
+    - ReplicaSet provides self-healing and scalability, Deployments for the updates and rollbacks
+    - Deployment components(?)
+      - replicas: number of pod instances
+      - revisionHistoryLimit: number of prev iterations to keep
+      - strategy: rolling update or recreate
+      - 
+ - StatefulSet
+ - DaemonSet - provide node-local facilities, such as a storage driver or network plugin
+    - ensures all Nodes (or subsets run an instance of a Pod)
+    - scheduled by scheduller controller and run by daemon controller
+    - as nodes are added to the cluster, pods are added to them
+    - typical uses: cluster storage, logs collection, node monitoring
+    
+ - Tasks that run to completion: 
+    - Job
+    - CronJob
