@@ -15,7 +15,14 @@ Workloads
       - revisionHistoryLimit: number of prev iterations to keep
       - strategy: rolling update or recreate
       - 
- - StatefulSet
+ - StatefulSet 
+    - for pods that must persist or maintain states
+    - maintains a sticky idenity for each of their pods
+    - each persistent identifier (name-x)
+    - if a pod dies, it is replaced with another one using identifier
+    - creates pods from 0-X, and deletes them from X-0
+    - typical uses: stable network identifiers, stable databases using persistent storage
+
  - DaemonSet - provide node-local facilities, such as a storage driver or network plugin
     - ensures all Nodes (or subsets run an instance of a Pod)
     - scheduled by scheduller controller and run by daemon controller
@@ -24,4 +31,14 @@ Workloads
     
  - Tasks that run to completion: 
     - Job
+      - workload for shortlived tasks
+      - creates pods and ensures that a specified number of them terminate successfully
+      - tracks completions
+      - when a specified number of completions are reached, the job is complete
+      - by default pod creation is sequential, but can be paralleled
     - CronJob
+      - extension of Job
+      - basically a Job that runs on cron schedule
+      **search notes on Cron Schedules
+      - last 3 successful and last 3 failed jobs are kept for history 
+      - if you don't want any history you can set successfulJobHistoryLimit = 0
