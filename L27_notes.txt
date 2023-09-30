@@ -1,0 +1,50 @@
+Storage and Persistence
+- you don't store data in containers
+- non-persistent data:
+  - locally writable layer
+  - default, write to filesystem
+  - once container is destroyed, so is data
+
+Volumes
+ - volumes let containers store data into external storage systems
+ - vendors create plugins for their storage systems according to the Container Storage Interface
+ - 2 ways to create storage: static and dynamic
+
+Persistent Volumes and Claims
+Persistent Volumes (PV)
+ - represent a storage resource
+ - cluster wide 
+ - provisioned by an admin
+
+Persistent Volume Claim (PVC)
+ - one-to-one mapping to a Persistent Volume
+
+- One or more pods can use a PVC
+- can be consumed by any of the containers within the pod
+
+Reclaim Policies
+- Delete - delete the data upon pods deletion (default)
+- Retain - keeps the data
+Access Modes
+- ReadWriteMany - volume can be mounter read-write by many pods
+- ReadOnlyMany - volume can be mounted read-only by many pods
+- ReadWriteOnce - volume can be mounted read-write by one pod, other pods in ReadOnly mode, the first pod to mount will be able to write
+
+Persistent Volume States
+- Available - a resource that is not yet bound to a Claim
+- Bound - a resource that is bound to a Claim
+- Released - the Claim has been deleted but the resource is not yet reclaimed by the cluster
+- Failed - a resource that has failed its automatic reclamation
+
+Dynamic Storage
+StorageClass
+ - describes the classes of storage offerred by the admin
+ - abstraction on top of an external storage resource
+ - no need to set a capacity
+ - eliminates the need for the admin to provision a persistent volume
+Reclaim Policies
+- Delete - delete the data upon pods deletion (default)
+- Retain - keeps the data
+Access Modes
+*same with Static Storages
+
