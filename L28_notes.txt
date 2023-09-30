@@ -1,0 +1,16 @@
+ConfigMaps
+ - decouple and externalize configurations
+ - referenced as environment variables
+ - created from: Manifests, Files, Directories
+ - static, if you change values, containers need to restart for it to reflect
+
+Mount a Volume to a ConfigMap
+ - solves the static issue
+ - updates to values are reflected in containers
+ - each key-value pair is seen as a file in the mounted directory
+
+Secrets
+ - same as ConfigMaps
+ - stored as base64 encoded strings, as such not secure
+ - protect them using RBAC authorization policies
+ - store them elsewhere, e.g. in a secret store via cloud provideds etc.
