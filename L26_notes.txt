@@ -1,0 +1,33 @@
+Services
+- Pod IPs are unreliable, Services IPs are
+- durable, static IP addresses, DNS name, [servicename].[namespace].svc.cluster.local
+- Services are ways to access pods
+- target Pods using Selectors
+
+ClusterIP
+- is the default service 
+- it only visible internally
+- Port refers to the port the service is listening to
+- TargetPort is the port the service will redirect to the pod
+- Load balancing is done via round robin, session affinity is configurable
+- when to use: to provide a durable way to communicate with pods inside the cluster
+
+NodePort
+- extends the ClusterIP service
+- visible internally and EXTERNALLY
+- nodePort refers to the port the service is listening to externally, ranges bet. 30000-32767, statically defined
+- k8s will assign a random port if not specified
+- port is the port the service is listening to
+- targetPort is the port the service will redirect to the pod
+- Nodes must have public IP addresses
+- User any NodeIP + nodePort to access the service
+
+Load balancing
+- L4 Load Balancing (Transport Layer)
+  - operates at TCP
+  - unable to make decisions based on content
+  - simple algorithms such as round-robin routing
+- L7 Load Balancing (Application Layer)
+  - operates at HTTP/HTTPS/SMTP
+  - able to make decisions based on the actual content
+  - more complex algorithms such as weighted routing/routing rules
