@@ -1,0 +1,13 @@
+Scaling
+
+Horizontal Scaling
+ - uses k8s Metrics
+ - Pods MUST have requests and limits defined
+ - HPA checks the Metrics Server every 30s
+ - sclae according to min and max number or replicas defined
+ - Cooldown/delays between scaling up and down:
+  - prevent racing conditions
+  - once a change has been made, HPA waits
+  - by default, scale up delay is 3m while scale down is 5m
+
+**components.yaml is used to instantiate the metrics server for the lab
