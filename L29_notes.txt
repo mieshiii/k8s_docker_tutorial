@@ -1,0 +1,10 @@
+Probes
+ - Startup Probes: to know when a container has started
+ - Readiness Probes: to know when a container is ready to serve traffic, failing will stop the application from receiving traffic
+ - Liveness Probes: indicates if a container is still running, failing will restart the container
+
+Probing the container
+- kubelet checks periodically the containers using Probes
+- ExecAction: run a command in a container
+- TCPSocketAction: check if a port is open on a container
+- HTTPGetAction: check if a URL against a PORT and PATH is reachable via HTTP GET
