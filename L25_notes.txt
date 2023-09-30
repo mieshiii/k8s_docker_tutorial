@@ -1,0 +1,16 @@
+Recreate VS RollingUpdate
+- Recreate shutsdown all pods and recreates them 
+- while RollingUpdate shutsdown and recreates them 1 at a time
+
+Values to change for RollingUpdate
+- maxSurge
+  - max number fo pods that can be created over the desired number of pods
+  - value or percentage
+- maxUnavailable
+  - max number of pods that can be unavailable over the desired number of pods
+- default strategy for both is at 25%
+
+Blue-Green Deployments
+- blue is the current version of the app, green is to be deployed
+- to actually implement just change the version pointing to the Green
+- Green now becomes Blue, and Blue becomes Green
