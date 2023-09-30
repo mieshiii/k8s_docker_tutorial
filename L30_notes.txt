@@ -1,0 +1,11 @@
+Web UI Dashboard
+ - not installed default by docker-desktop or most cloud providers
+ - don't need it, don't install it
+
+Lens
+ - Kubernetes IDE 
+ - runs locally
+** https://k8slens.dev/
+
+K9s
+ - Kubernetes CLI tool
